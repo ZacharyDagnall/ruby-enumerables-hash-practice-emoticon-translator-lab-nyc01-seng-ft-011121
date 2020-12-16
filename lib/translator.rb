@@ -18,7 +18,6 @@ def get_japanese_emoticon(filename, emoticon)
   dictionary = load_library(filename)
   
   dictionary.each do |entry|
-    emotion = entry[0]
     e_j = entry[1]
     if(e_j[:english]==emoticon)
       return e_j[:japanese]
@@ -34,5 +33,13 @@ end
 def get_english_meaning(filename, emoticon)
  dictionary = load_library(filename)
   
+  dictionary.each do |entry|
+    e_j = entry[1]
+    if(e_j[:english]==emoticon)
+      return e_j[:japanese]
+    end
+  end
+  
+  return "emoticon not found"
 end
 
