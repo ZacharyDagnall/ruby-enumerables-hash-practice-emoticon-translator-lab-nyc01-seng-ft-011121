@@ -35,6 +35,7 @@ def get_english_meaning(filename, emoticon)
   
  dictionary.each do |entry|
     e_j = entry[1]
+    binding.pry
     if(e_j[:japanese]==emoticon)
       return e_j[:english]
     end
